@@ -4,8 +4,7 @@
 # Under a MIT license
 
 # change these variables to what you need
-MYSQLROOT=root
-MYSQLPASS=password
+MYSQLCONFIG=~/my.cnf
 S3BUCKET=bucketname
 FILENAME=filename
 DATABASE='--all-databases'
@@ -36,7 +35,7 @@ echo "Selected period: $PERIOD."
 echo "Starting backing up the database to a file..."
 
 # dump all databases
-${MYSQLDUMPPATH}mysqldump --quick --user=${MYSQLROOT} --password=${MYSQLPASS} ${DATABASE} > ${TMP_PATH}${FILENAME}.sql
+${MYSQLDUMPPATH}mysqldump --quick --defaults-file=${MYSQLCONFIG} ${DATABASE} > ${TMP_PATH}${FILENAME}.sql
 
 echo "Done backing up the database to a file."
 echo "Starting compression..."
