@@ -35,7 +35,7 @@ echo "Selected period: $PERIOD."
 echo "Starting backing up the database to a file..."
 
 # dump all databases
-${MYSQLDUMPPATH}mysqldump --quick --defaults-file=${MYSQLCONFIG} ${DATABASE} > ${TMP_PATH}${FILENAME}.sql
+${MYSQLDUMPPATH}mysqldump --quick --defaults-file=${MYSQLCONFIG} ${DATABASE} | sed '/SQL SECUIRTY DEFNINER/d'  > ${TMP_PATH}${FILENAME}.sql
 
 echo "Done backing up the database to a file."
 echo "Starting compression..."
