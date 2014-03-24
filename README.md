@@ -1,4 +1,4 @@
-woxxy / MySQL-backup-to-Amazon-S3
+alika / MySQL-backup-to-Amazon-S3
 =================================
 
 (This is not really an application, just a manual and some lines of code)
@@ -62,6 +62,14 @@ Or, if you'd prefer to have the script determine the current date and day of the
 
 And you're set.
 
+Backup Rotation
+---------------
+
+Default backup rotation is:
+
+ * Daily = 6 days
+ * Weekly = 4 weeks
+ * Monthly = 12 months
 
 Troubleshooting
 ---------------
