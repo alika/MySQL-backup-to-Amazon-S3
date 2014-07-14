@@ -64,7 +64,7 @@ done
 
 echo "Starting backing up the database to a file..."
 # dump all databases
-${MYSQLDUMPPATH}mysqldump --defaults-file=${MYSQLCONFIG} ${DATABASE} | sed '/SQL SECUIRTY DEFNINER/d'  > ${TMP_PATH}${FILENAME}.sql
+${MYSQLDUMPPATH}mysqldump --defaults-file=${MYSQLCONFIG} ${DATABASE} | sed '/SQL SECUIRTY DEFINER/d'  > ${TMP_PATH}${FILENAME}.sql
 
 echo "Done backing up the database to a file."
 echo "Starting compression..."
